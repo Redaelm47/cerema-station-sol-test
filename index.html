@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Station sol · USV Cerema</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Station sol</h1>
+      <p class="sous-titre">Drone de surface · Projet 20 Cerema</p>
+    </div>
+    <div id="connexion" class="connexion hors-ligne">
+      <span class="pastille"></span><span id="connexion-texte">connexion…</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="drone" aria-label="État du drone">
+      <div class="tuile">
+        <span class="etiquette">Mode</span>
+        <span id="mode" class="valeur">—</span>
+      </div>
+      <div class="tuile">
+        <span class="etiquette">Batterie <small>(simulée)</small></span>
+        <span id="batterie" class="valeur">—</span>
+        <div class="jauge"><div id="batterie-jauge"></div></div>
+      </div>
+      <div class="tuile">
+        <span class="etiquette">Navires suivis</span>
+        <span id="navires-suivis" class="valeur">—</span>
+      </div>
+      <div class="tuile">
+        <span class="etiquette">Température du Pi</span>
+        <span id="temperature" class="valeur">—</span>
+      </div>
+      <div class="tuile">
+        <span class="etiquette">Dernier message</span>
+        <span id="dernier-t" class="valeur">—</span>
+      </div>
+    </section>
+
+    <div class="colonnes">
+      <section class="carte">
+        <h2>Alertes <span id="nb-alertes" class="compteur">0</span></h2>
+        <ol id="alertes" class="alertes"></ol>
+        <p id="alertes-vide" class="vide">Aucune alerte pour l'instant.</p>
+      </section>
+
+      <section class="carte">
+        <h2>Navires <span id="nb-navires" class="compteur">0</span></h2>
+        <div class="defilement">
+          <table>
+            <thead>
+              <tr>
+                <th>Piste</th><th>Situation</th><th>Type</th><th>Immatriculation</th><th>Vu à</th>
+              </tr>
+            </thead>
+            <tbody id="navires"></tbody>
+          </table>
+        </div>
+        <p id="navires-vide" class="vide">Aucun navire signalé.</p>
+      </section>
+    </div>
+
+    <section class="carte">
+      <h2>Journal des messages</h2>
+      <ol id="journal" class="journal"></ol>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
